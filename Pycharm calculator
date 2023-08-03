@@ -1,0 +1,31 @@
+# print("Bir işlem seçiniz.")
+# print("1. Toplama")
+# print("2. Çıkarma")
+# print("3. Çarpma")
+# print("4. Bölme\n")
+
+print("""
+Bir işlem seçiniz....
+1. Toplama
+2. Çıkarma
+3. Çarpma
+4. Bölme
+""")
+
+while True:
+    secim = input("Seçiminizi buraya giriniz: ")
+
+    num1 = int(input("Birinci sayıyı giriniz: "))
+
+    num2 = int(input("İkinci sayıyı giriniz: "))
+
+    if secim == "1":
+        print("{} + {} = {}".format(num1, num2, num1+num2))
+    elif secim == "2":
+        print("{} - {} = {}".format(num1, num2, num1-num2))
+    elif secim == "3":
+        print("{} x {} = {}".format(num1, num2, num1*num2))
+    elif secim == "4":
+        print("{} bölü {} = {}".format(num1, num2, num1/num2))
+    else:
+        print("Lütfen, geçerli bir işlem giriniz.\n")
