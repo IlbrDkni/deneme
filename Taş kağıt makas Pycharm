@@ -1,0 +1,166 @@
+import random
+
+score = 0
+
+secenek=["taş","kağıt","makas"]
+
+taş=secenek[0]
+kağıt=secenek[1]
+makas=secenek[2]
+print("Taş,Kağıt, Makas oyununa hoş geldinizn Oyunu bitirmek için q tuşuna basın")
+print("puanınıza bakmak için h tuşuna basın")
+
+while True:
+    secim = input("TAŞ/KAĞIT/MAKAS: ")
+
+
+    bil_secim = random.choice(secenek)
+    if secim==taş:
+        if bil_secim==taş:
+            print("Bilgisayarın seçimi: Taş\n Sonuç: Berabere")
+        elif bil_secim==kağıt:
+            print("Bilgisayarın seçimi: Kağıt\n Kaybettiniz")
+            score -= 50
+        else:
+            print("Bilgisayarın seçimi: makas\n Sonuç:Kazandınız")
+            score += 100
+
+    if secim==kağıt:
+        if bil_secim==taş:
+            print("Bilgisayarın seçimi: Taş\n Sonuç: Kazandınız")
+            score += 100
+        elif bil_secim==kağıt:
+            print("Bilgisayarın seçimi: Kağıt\n Sonuç: Berabere")
+        else:
+            print("Bilgisayarın seçimi: Makas\n Sonuç:Kaybettiniz")
+
+
+    if secim==makas:
+        if bil_secim==taş:
+            print("Bilgisayarın seçimi: Taş\n Sonuç: Kaybettiniz")
+            score -= 50
+        elif bil_secim==kağıt:
+            print("Bilgisayarın seçimi: Kağıt\n Sonuç: Kazandınız")
+            score += 100
+        else:
+            print("Bilgisayarın seçimi: Makas\n Sonuç:Berabere")
+    if secim=='q':
+        print("Çıkılıyor...")
+        break
+
+    if secim == "h":
+        print(score)
+
+    if score < -100:
+        break
+
+
+#bu internetteki kod:
+# import random
+#
+#
+# def main():
+#
+#     win = 0
+#     lose = 0
+#     tie = 0
+#
+#
+#     play_again = 'y'
+#
+#
+#     while play_again == 'y':
+#
+#         print('Prepare to battle in a game of paper, rock, scissors!')
+#         print('Please input the correct number according')
+#         print('to the object you want to choose.')
+#
+#
+#         computer_choice = get_computer_choice()
+#         player_choice = get_player_choice()
+#
+#
+#         print('Computer chose', computer_choice, '.')
+#         print('You chose', player_choice, '.')
+#
+#
+#         winner_result(computer_choice, player_choice)
+#
+#
+#         play_again = input("Play again? Enter 'y' for yes or 'n' for no. ")
+#
+#
+#     print('Your total wins are', win, '.')
+#     print('Your total losses are', lose, '.')
+#     print('Your total ties are', tie, '.')
+#
+#
+# def get_computer_choice():
+#
+#     choice = random.randint(1,3)
+#
+#
+#     if choice == 1:
+#         choice = 'ROCK'
+#     elif choice == 2:
+#         choice = 'PAPER'
+#     else:
+#         choice = 'SCISSORS'
+#
+#
+#     return choice
+#
+#
+# def get_player_choice():
+#
+#     choice = int(input("Select rock(1), paper(2), or scissors(3): "))
+#
+#
+#     while choice != 1 and choice != 2 and choice != 3:
+#         print('The valid numbers are rock(type in 1), paper(type in 2),')
+#         print('or scissors(type in 3).')
+#         choice = int(input('Enter a valid number please: '))
+#
+#
+#     if choice == 1:
+#         choice = 'ROCK'
+#     elif choice == 2:
+#         choice = 'PAPER'
+#     else:
+#         choice = 'SCISSORS'
+#
+#
+#     return choice
+#
+#
+# def winner_result(computer_choice, player_choice):
+#
+#     if computer_choice == player_choice:
+#         result = 'tie'
+#         print("It's a tie!")
+#
+#
+#     elif computer_choice == 'SCISSORS' and player_choice == 'ROCK':
+#         result = 'win'
+#         print('ROCK crushes SCISSORS! You win!')
+#     elif computer_choice == 'PAPER' and player_choice == 'SCISSORS':
+#         result = 'win'
+#         print('SCISSORS cut PAPER! You win!')
+#     elif computer_choice == 'ROCK' and player_choice == 'PAPER':
+#         result = 'win'
+#         print('PAPER covers ROCK! You win!')
+#
+#     else:
+#         result = 'lose'
+#         print('You lose!')
+#
+# def result(winner_result,player_choice, computer_choice):
+#
+#     # accumulate the appropriate winner of game total
+#     if result == 'win':
+#         win += 1
+#     elif result == 'lose':
+#         lose += 1
+#     else:
+#         tie += 1
+#     return result
