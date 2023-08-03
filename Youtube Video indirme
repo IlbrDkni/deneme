@@ -1,0 +1,16 @@
+from pytube import YouTube
+
+yt = YouTube(input("Link: "))
+indirme_yeri = input("Yeri seçiniz: ")
+
+video = yt.streams.filter(file_extension= "mp4")[1]
+
+# for i, mp4 in enumerate(video):
+#     print(i, mp4)
+#
+# n = int(input("Seçiminiz: "))
+print("İndiriliyor...")
+
+video.download(indirme_yeri)
+
+print("İndirme işlemi tamamlandı...")
