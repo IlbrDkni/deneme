@@ -1,0 +1,37 @@
+print("""
+****************** İLBER BANK'A HOŞ GELDİNİZ ******************
+
+Bir işlem seçiniz....
+1. Para Yatırma
+2. Para Çek
+3. Bakiye Sorgulama
+ATM'den çıkmak için 'q' tuşuna basınız.
+""")
+
+bakiye = 1000
+
+while True:
+    secim = input("Seçiminizi buraya giriniz: ")
+
+    if secim == "1":
+        miktar = int(input("kaç para yatırmak istersiniz?: "))
+        bakiye += miktar
+
+
+    elif secim == "2":
+
+        miktar = int(input("kaç para çekmek istersiniz?: "))
+        if bakiye < miktar:
+            print("yeterince paran yok")
+        elif bakiye > miktar:
+            bakiye -= miktar
+
+    elif secim == "3":
+        print(bakiye)
+
+    elif secim == "q":
+        print("görüşürüz yine gel ")
+        break
+    else:
+        print("Lütfen seçeneklerden birini seçiniz.")
+
