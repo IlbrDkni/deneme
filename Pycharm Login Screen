@@ -1,0 +1,35 @@
+print("********LOGIN SCREEN ********")
+
+
+
+
+while True:
+    giris = 3
+
+    sistem_username = "ilber_dakni"
+    sistem_password = "yesyesyes"
+
+    while giris > 0:
+        kullanıcı_adı = input("username: ")
+        parola = input("password: ")
+
+        if kullanıcı_adı == sistem_username and parola == sistem_password:
+            print("welcome to Website {} ".format(sistem_username))
+            break
+
+        elif kullanıcı_adı != sistem_username and parola != sistem_password:
+            print("login unsuccesfull username or password incorrect")
+            giris-= 1
+            print(giris, "hakkınız kaldı.")
+
+        elif kullanıcı_adı == sistem_username and parola != sistem_password:
+            print("login unsuccesfull username or password incorrect")
+            giris -= 1
+            print(giris, "hakkınız kaldı.")
+
+        elif kullanıcı_adı != sistem_username and parola == sistem_password:
+            print("login unsuccesfull username or password incorrect")
+            giris -= 1
+            print(giris, "hakkınız kaldı.")
+    if giris == 0:
+        break
